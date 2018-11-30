@@ -34,6 +34,7 @@ export const Row = styled.div`
 	${mapBreakpoints(({gutter}) => `
 		margin-left: ${gutter/-2 + 'rem'};
 		margin-right: ${gutter/-2 + 'rem'};
+		max-width: calc(100% + ${gutter + 'rem'});
 	`)}
 	${p => p['vertical-gutter'] && mapBreakpoints(({gutter}) => css`
 		margin: ${gutter/-2 + 'rem'};
