@@ -23,8 +23,8 @@
   },
   "devDependencies": {
     "nwb": "0.23.x",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.7.x",
+    "react-dom": "^16.7.x",
     "styled-components": "4.1.2",
     "react-live": "^1.12.0"
   },
