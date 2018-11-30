@@ -20,6 +20,18 @@ const Tab = styled.div`
 	}
 `
 
+const BlueprintWrapper = styled.div`
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	pointer-events: none;
+	opacity: 0;
+	transition: 0.2s all;
+`
+
 const Wrapper = styled.div`
 	border: 2px dashed currentColor;
 	box-shadow: 0 1.25rem 4rem rgba(0,0,0,.55);
@@ -33,6 +45,9 @@ const Wrapper = styled.div`
 	top: 5rem;
 	${dots({hover: '#aaa'})}
 	&:focus-within, &:hover, &:active{
+		${BlueprintWrapper}{
+			opacity: 1;
+		}
 		${Tab}:before {
 			background-color: #f85955;
 			border: 1px solid #d74246;
@@ -48,29 +63,19 @@ const Wrapper = styled.div`
 	}
 `
 
-const GridWrapper = styled.div`
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	overflow: hidden;
-	pointer-events: none;
-`
-
 const Marker = styled.div`
 	height: 100%;
 	background: rgba(0,0,238, 0.06);
 `
 
-const Grid = () => (
-	<GridWrapper>
+const Blueprint = () => (
+	<BlueprintWrapper>
 		<Row style={{height: '100%'}}>
 			{twelve.map(x => (
 				<Cell xs={1} style={{height: '100%'}}><Marker/></Cell>
 			))}
 		</Row>
-	</GridWrapper>
+	</BlueprintWrapper>
 )
 
 const Preview = props => (
@@ -78,7 +83,7 @@ const Preview = props => (
 		<Tab><span/></Tab>
 		<div style={{position: 'relative', padding: '1rem 0'}}>
 			<LivePreview {...props}/>
-			<Grid/>
+			<Blueprint/>
 		</div>
 	</Wrapper>
 )
