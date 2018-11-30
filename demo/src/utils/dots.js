@@ -1,4 +1,4 @@
-const dots = `
+const dots = ({hover = 'white'}) =>`
 	&:before, &:after{
 		transition: 0.2s all;
 		content: '';
@@ -20,7 +20,8 @@ const dots = `
 	}
 	&:focus-within, &:hover, &:active{
 		border-style: solid;
-		color: white;
+		color: ${hover};
+		z-index: 1;
 		&:before{
 			transform: rotate(45deg) translateY(11.5px);
 		}

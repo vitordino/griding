@@ -2,13 +2,15 @@ import React from 'react'
 import {render} from 'react-dom'
 import styled from 'styled-components'
 import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live'
+import {Row, Cell} from '../../src'
+import useToggle from './utils/useToggle'
 import Editor from './components/Editor'
+import Preview from './components/Preview'
 import Container from './components/Container'
-import Title from './components/Title'
+import Navbar from './components/Navbar'
 import Dotted from './components/Dotted'
 import Footer from './components/Footer'
 import ErrorMessage from './components/ErrorMessage'
-import {Row, Cell} from '../../src'
 import './reset.css'
 
 const repo = 'https://github.com/vitordino/skr'
@@ -29,31 +31,39 @@ const code =
 
 <Row vertical-gutter>
 	{twelve.map(x => (
-    <Cell xs={6} md={4} lg={3} xg={2} key={x}>
+    <Cell xs={6} sm={4} md={3} lg={2} key={x}>
       <Dotted>{x}</Dotted>
     </Cell>
   ))}
 </Row>
 `
 
-const App = () => (
-	<LiveProvider code={code} scope={scope}>
-		<Wrapper>
-			<Container>
-				<Title><a href={repo}>skr</a></Title>
-				<Row style={{alignItems: 'stretch', paddingTop: '1.875rem'}}>
-					<Cell xs={12} lg={6}>
-						<Editor/>
-					</Cell>
-					<Cell xs={12} lg={6}>
-						<ErrorMessage><LiveError/></ErrorMessage>
-						<LivePreview/>
-					</Cell>
-				</Row>
-			</Container>
-			<Footer/>
-		</Wrapper>
-	</LiveProvider>
-)
+const App = () => {
+	const [horizontal, toggle] = useToggle(true)
+	return(
+		<LiveProvider code={code} scope={scope}>
+			<Wrapper>
+				<Container>
+					<Navbar
+						title='skr'
+						to={repo}
+						toggle={toggle}
+						horizontal={horizontal}
+					/>
+					<Row style={{alignItems: 'stretch', paddingTop: '1.875rem'}}>
+						<Cell xs={12} lg={horizontal ? 6 : 12}>
+							<Editor/>
+						</Cell>
+						<Cell xs={12} lg={horizontal ? 6 : 12}>
+							<ErrorMessage><LiveError/></ErrorMessage>
+							<Preview/>
+						</Cell>
+					</Row>
+				</Container>
+				<Footer/>
+			</Wrapper>
+		</LiveProvider>
+	)
+}
 
 render(<App/>, document.querySelector('#demo'))

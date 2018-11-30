@@ -3,7 +3,6 @@ import dots from '../utils/dots'
 
 const Dotted = styled.code`
 	border: 0.125rem dashed currentColor;
-	color: white;
 	border-radius: 0.25rem;
 	display: block;
 	font-size: 0.75rem;
@@ -12,8 +11,10 @@ const Dotted = styled.code`
 	padding: 1rem 0;
 	position: relative;
 	user-select: none;
-	color: #333;
-	${dots}
+	color: #aaa;
+	background: white;
+	cursor: pointer;
+	${dots({hover: '#333'})}
 `
 
 export default Dotted
