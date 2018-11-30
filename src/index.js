@@ -1,9 +1,12 @@
-import React, {Component} from 'react'
+import React from 'react'
+import styled from 'styled-components'
 
-export default class extends Component {
-  render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
-  }
-}
+const Wrapper = styled.div``
+
+const skr = () => (
+	<Wrapper>
+		<div>skr skr 777</div>
+	</Wrapper>
+)
+
+export default skr
