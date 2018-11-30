@@ -46,9 +46,9 @@ const Button = styled.button`
 `
 
 const Icon = () => (
-	<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-		<g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-			<path d="M1 1h7v18H1zM12 1h7v18h-7z"/>
+	<svg width='20' height='20' xmlns='http://www.w3.org/2000/svg'>
+		<g stroke='currentColor' stroke-width='2' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'>
+			<path d='M1 1h7v18H1zM12 1h7v18h-7z'/>
 		</g>
 	</svg>
 )
