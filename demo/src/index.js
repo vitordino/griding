@@ -6,6 +6,7 @@ import Editor from './components/Editor'
 import Container from './components/Container'
 import Title from './components/Title'
 import Dotted from './components/Dotted'
+import Footer from './components/Footer'
 import ErrorMessage from './components/ErrorMessage'
 import {Row, Cell} from '../../src'
 import './reset.css'
@@ -50,6 +51,7 @@ const App = () => (
 					</Cell>
 				</Row>
 			</Container>
+			<Footer/>
 		</Wrapper>
 	</LiveProvider>
 )
