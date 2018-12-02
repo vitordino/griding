@@ -1,15 +1,22 @@
-import styled, {css} from 'styled-components'
-import {breakpoints, columns} from './theme'
+import React from 'react'
+import styled, {css, ThemeProvider} from 'styled-components'
+import theme, {breakpoints} from './theme'
 import above from './above'
 
-export const mapBreakpoints = fn => Object.keys(breakpoints)
+const mapBreakpoints = fn => Object.keys(breakpoints)
 	.map(label => above[label]`${fn(breakpoints[label])}`)
 
-export const mapPropsBreakpoints = fn => props => Object.keys(props)
+const mapPropsBreakpoints = fn => props => Object.keys(props)
 	.filter(prop => Object.keys(breakpoints).includes(prop))
 	.map(label => above[label]`${fn(props[label], props)}`)
 
 const getCellDisplay = p => p.flex ? 'flex' : 'block'
+
+export const GridingProvider = ({children, ...props}) => (
+	<ThemeProvider theme={{griding: Object.assign({}, theme, props.theme)}}>
+		{children}
+	</ThemeProvider>
+)
 
 export const Cell = styled.div`
 	box-sizing: border-box;
@@ -20,7 +27,7 @@ export const Cell = styled.div`
 	`)}
 	${mapPropsBreakpoints((value, props) => `
 		display: ${value > 0 ? getCellDisplay(props) : 'none'};
-		width: ${(value / columns || 1) * 100 + '%'};
+		width: ${(value / props.theme.griding.columns || 1) * 100 + '%'};
 	`)}
 `
 

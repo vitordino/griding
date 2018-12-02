@@ -2,7 +2,7 @@ import React from 'react'
 import {render} from 'react-dom'
 import styled from 'styled-components'
 import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live'
-import {Row, Cell} from '../../src'
+import {Row, Cell, GridingProvider} from '../../src'
 import useToggle from './utils/useToggle'
 import Editor from './components/Editor'
 import Preview from './components/Preview'
@@ -41,28 +41,30 @@ const code =
 const App = () => {
 	const [horizontal, toggle] = useToggle(true)
 	return(
-		<LiveProvider code={code} scope={scope}>
-			<Wrapper>
-				<Container>
-					<Navbar
-						title='skr'
-						to={repo}
-						toggle={toggle}
-						horizontal={horizontal}
-					/>
-					<Row style={{alignItems: 'stretch', paddingTop: '1.875rem'}}>
-						<Cell xs={12} lg={horizontal ? 6 : 12}>
-							<Editor/>
-						</Cell>
-						<Cell xs={12} lg={horizontal ? 6 : 12}>
-							<ErrorMessage><LiveError/></ErrorMessage>
-							<Preview/>
-						</Cell>
-					</Row>
-				</Container>
-				<Footer/>
-			</Wrapper>
-		</LiveProvider>
+		<GridingProvider>
+			<LiveProvider code={code} scope={scope}>
+				<Wrapper>
+					<Container>
+						<Navbar
+							title='skr'
+							to={repo}
+							toggle={toggle}
+							horizontal={horizontal}
+						/>
+						<Row style={{alignItems: 'stretch', paddingTop: '1.875rem'}}>
+							<Cell xs={12} lg={horizontal ? 6 : 12}>
+								<Editor/>
+							</Cell>
+							<Cell xs={12} lg={horizontal ? 6 : 12}>
+								<ErrorMessage><LiveError/></ErrorMessage>
+								<Preview/>
+							</Cell>
+						</Row>
+					</Container>
+					<Footer/>
+				</Wrapper>
+			</LiveProvider>
+		</GridingProvider>
 	)
 }
 
