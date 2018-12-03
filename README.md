@@ -90,6 +90,13 @@ const App = () => (
 )
 ```
 
+
+#### thanks
+
+mostly of this lib was done with [@leonardodino](https://github.com/leonardodino) great help and probably wouldn't be possible without it.
+
+
+
 [npm-badge]: https://img.shields.io/npm/v/griding.png?style=flat-square
 [npm]: https://npmjs.org/package/griding
 
