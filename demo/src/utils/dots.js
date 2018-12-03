@@ -21,7 +21,6 @@ const dots = ({hover = 'white'}) =>`
 	&:focus-within, &:hover, &:active{
 		border-style: solid;
 		color: ${hover};
-		z-index: 1;
 		&:before{
 			transform: rotate(45deg) translateY(11.5px);
 		}
