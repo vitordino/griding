@@ -1,6 +1,10 @@
 # [WIP] griding
 
-[![npm package][npm-badge]][npm] [![demo][demo-badge]][demo]
+[![npm package][npm-badge]][npm]
+[![demo][demo-badge]][demo]
+[![Travis][build-badge]][build]
+[![Coveralls][coveralls-badge]][coveralls]
+
 
 > **griding** is a set of react components to make grid layouts easier
 
@@ -30,3 +34,9 @@ although there are — already — an infinite amount of grid packages (pure css
 
 [demo-badge]: https://img.shields.io/badge/🌐-demo-lightgray.svg?style=flat-square
 [demo]: https://griding.vitordino.com/
+
+[build-badge]: https://img.shields.io/travis/vitordino/griding/master.png?style=flat-square
+[build]: https://travis-ci.org/vitordino/griding
+
+[coveralls-badge]: https://img.shields.io/coveralls/vitordino/griding/master.png?style=flat-square
+[coveralls]: https://coveralls.io/github/vitordino/griding
