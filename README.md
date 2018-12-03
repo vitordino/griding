@@ -28,6 +28,67 @@ although there are — already — an infinite amount of grid packages (pure css
 - [ ] props to handle alignments (?)
 
 
+### installation
+
+yarn:
+```
+yarn add griding
+```
+
+npm:
+```
+npm install griding --save
+```
+
+
+### usage
+
+basic usage (using default options):
+
+```jsx
+import {Row, Cell, GridingProvider} from '../../src'
+
+const App = () => (
+  <GridingProvider>
+    <Row vertical-gutter>
+      <Cell xs={6} sm={4} md={3} lg={2}>
+        <div>lorem</div>
+      </Cell>
+      <Cell xs={6} sm={4} md={3} lg={2}>
+        <div>ipsum</div>
+      </Cell>
+    </Row>
+  </GridingProvider>
+)
+```
+
+
+customizing options (wip):
+
+```jsx
+import {Row, Cell, GridingProvider} from '../../src'
+
+// it will understand pixels/rems to fit your needs
+const myCoolTheme = {
+  columns: 13,
+  breakpoints: {
+    hey:   { width: 0, gutter: '16px' },
+    thats: { width: 480, gutter: '1.5rem' },
+    rad:   { width: '48rem', gutter: 32 },
+  }
+}
+
+const App = () => (
+  <GridingProvider theme={myCoolTheme}>
+    <Row>
+      {/* look how cool, your own named breakpoints */}
+      <Cell hey={6} thats={4} rad={3}>
+        <div>lorem ipsum</div>
+      </Cell>
+    </Row>
+  </GridingProvider>
+)
+```
 
 [npm-badge]: https://img.shields.io/npm/v/griding.png?style=flat-square
 [npm]: https://npmjs.org/package/griding
