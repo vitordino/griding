@@ -72,7 +72,7 @@ const Blueprint = () => (
 	<BlueprintWrapper>
 		<Row style={{height: '100%'}}>
 			{twelve.map(x => (
-				<Cell xs={1} style={{height: '100%'}}><Marker/></Cell>
+				<Cell xs={1} key={x} style={{height: '100%'}}><Marker/></Cell>
 			))}
 		</Row>
 	</BlueprintWrapper>
