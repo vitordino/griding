@@ -3,6 +3,7 @@ import {render} from 'react-dom'
 import styled from 'styled-components'
 import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live'
 import {Row, Cell, GridingProvider} from '../../src'
+import {name} from '../../package.json'
 import useToggle from './utils/useToggle'
 import Editor from './components/Editor'
 import Preview from './components/Preview'
@@ -13,7 +14,7 @@ import Footer from './components/Footer'
 import ErrorMessage from './components/ErrorMessage'
 import './reset.css'
 
-const repo = 'https://github.com/vitordino/skr'
+const repo = 'https://github.com/vitordino/griding'
 const leftPad = s => (s+'').length == 1 ? '0'+s : s
 const twelve = Array.from({length: 12}, (v, i) => leftPad(i+1))
 
@@ -46,7 +47,7 @@ const App = () => {
 				<Wrapper>
 					<Container>
 						<Navbar
-							title='skr'
+							title={name}
 							to={repo}
 							toggle={toggle}
 							horizontal={horizontal}

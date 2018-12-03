@@ -1,16 +1,32 @@
-# skr
+# [WIP] griding
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+[![npm package][npm-badge]][npm] [![demo][demo-badge]][demo]
 
-Describe skr here.
+> **griding** is a set of react components to make grid layouts easier
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+### why
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+although there are — already — an infinite amount of grid packages (pure css, stylus/sass, react) i couldn't find one that fill my needs:
+
+1. responsive gutters
+2. customisable breakpoints
+3. real *react-like* API
+4. easy to compose styles (lib-agnostic)
+
+
+### roadmap
+
+- [ ] finish `<ThemeProvider/>`
+- [ ] make [`emotion`](https://emotion.sh/) version
+- [ ] make vanilla style version
+- [ ] optimize build size
+- [ ] props to handle alignments (?)
+
+
+
+[npm-badge]: https://img.shields.io/npm/v/griding.png?style=flat-square
+[npm]: https://npmjs.org/package/griding
+
+[demo-badge]: https://img.shields.io/badge/🌐-demo-lightgray.svg?style=flat-square
+[demo]: https://griding.vitordino.com/
