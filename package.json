@@ -28,11 +28,22 @@
     "styled-components": "4.1.2",
     "react-live": "^1.12.0"
   },
-  "author": "",
-  "homepage": "",
+  "author": "Vitor Dino <vitor@kunstdesign.com.br>",
+  "homepage": "griding.vitordino.com",
   "license": "MIT",
-  "repository": "",
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vitordino/griding.git"
+  },
+  "bugs": "https://github.com/vitordino/griding/issues",
   "keywords": [
-    "react-component"
+    "react",
+    "react-component",
+    "grid",
+    "flexbox",
+    "layout"
   ]
 }
