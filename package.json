@@ -1,6 +1,6 @@
 {
   "name": "griding",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "lean grid for react",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -25,8 +25,8 @@
     "nwb": "0.23.x",
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2",
-    "styled-components": "4.1.2",
-    "react-live": "^1.12.0"
+    "react-live": "^1.12.0",
+    "styled-components": "4.1.2"
   },
   "author": "Vitor Dino <vitor@kunstdesign.com.br>",
   "homepage": "griding.vitordino.com",
