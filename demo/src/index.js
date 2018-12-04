@@ -14,10 +14,6 @@ import Footer from './components/Footer'
 import ErrorMessage from './components/ErrorMessage'
 import './reset.css'
 
-const repo = 'https://github.com/vitordino/griding'
-const leftPad = s => (s+'').length == 1 ? '0'+s : s
-const twelve = Array.from({length: 12}, (v, i) => leftPad(i+1))
-
 const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -25,35 +21,40 @@ const Wrapper = styled.div`
 	background: black;
 `
 
-const scope = {styled, leftPad, twelve, GridingProvider, Row, Cell, Dotted}
+const scope = {styled, GridingProvider, Row, Cell, Dotted}
 
 const code =
-`//twelve = ['01', '02', ..., '12']
-
-// grid options (number of columns and breakpoints)
+`// grid options (number of columns and breakpoints)
 // can be passed as a theme prop on Provider
 
-<GridingProvider>
-	<Row vertical-gutter>
-		{twelve.map(x => (
-			<Cell xs={6} sm={4} md={3} lg={2} key={x}>
-				<Dotted>{x}</Dotted>
-			</Cell>
-		))}
-	</Row>
-</GridingProvider>
+const leftPad = s => (s+'').length == 1 ? '0'+s : s
+const twelve = Array.from({length: 12}, (v, i) => leftPad(i+1))
+
+const App = () => (
+	<GridingProvider>
+		<Row vertical-gutter>
+			{twelve.map(x => (
+				<Cell xs={6} sm={4} md={3} lg={2} key={x}>
+					<Dotted>{x}</Dotted>
+				</Cell>
+			))}
+		</Row>
+	</GridingProvider>
+)
+
+render(App)
 `
 
 const App = () => {
 	const [horizontal, toggle] = useToggle(true)
 	return(
 		<GridingProvider>
-			<LiveProvider code={code} scope={scope}>
+			<LiveProvider code={code} scope={scope} noInline>
 				<Wrapper>
 					<Container>
 						<Navbar
 							title={name}
-							to={repo}
+							to='https://github.com/vitordino/griding'
 							toggle={toggle}
 							horizontal={horizontal}
 						/>
