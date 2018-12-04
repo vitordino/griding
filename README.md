@@ -21,11 +21,9 @@ although there are — already — an infinite amount of grid packages (pure css
 
 ### roadmap
 
-- [ ] finish `<ThemeProvider/>`
-- [ ] make [`emotion`](https://emotion.sh/) version
-- [ ] make vanilla style version
-- [ ] optimize build size
+- [x] finish `<ThemeProvider/>`
 - [ ] props to handle alignments (?)
+- [ ] make vanilla style version
 
 
 ### installation
@@ -63,12 +61,12 @@ const App = () => (
 ```
 
 
-customizing options (wip):
+customizing options:
 
 ```jsx
 import {Row, Cell, GridingProvider} from '../../src'
 
-// it will understand pixels/rems to fit your needs
+// it will understand pixels/rems to fit your needs [wip]
 const myCoolTheme = {
   columns: 13,
   breakpoints: {
