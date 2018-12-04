@@ -22,8 +22,8 @@ export const Cell = styled.div`
 	box-sizing: border-box;
 	display: ${getCellDisplay};
 	${p => mapBreakpoints(p.theme.griding.breakpoints, ({gutter}) => `
-		padding-left: ${gutter/2 + 'rem'};
-		padding-right: ${gutter/2 + 'rem'};
+		padding-left: ${gutter/2 + 'px'};
+		padding-right: ${gutter/2 + 'px'};
 	`)}
 	${p => mapPropsBreakpoints(p.theme.griding.breakpoints, (value, props) => `
 		display: ${value > 0 ? getCellDisplay(props) : 'none'};
@@ -39,13 +39,13 @@ export const Row = styled.div`
 	flex-wrap: wrap;
 	align-items: flex-start;
 	${mapBreakpoints(({gutter}) => `
-		margin-left: ${gutter/-2 + 'rem'};
-		margin-right: ${gutter/-2 + 'rem'};
-		max-width: calc(100% + ${gutter + 'rem'});
+		margin-left: ${gutter/-2 + 'px'};
+		margin-right: ${gutter/-2 + 'px'};
+		max-width: calc(100% + ${gutter + 'px'});
 	`)}
 	${p => p['vertical-gutter'] && mapBreakpoints(p.theme.griding.breakpoints, ({gutter}) => css`
-		margin: ${gutter/-2 + 'rem'};
-		& ${Cell} {padding: ${gutter/2 + 'rem'};}
+		margin: ${gutter/-2 + 'px'};
+		& ${Cell} {padding: ${gutter/2 + 'px'};}
 	`)}
 `
 

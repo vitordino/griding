@@ -1,8 +1,8 @@
 export const columns = 12
 export const breakpoints = {
-	xs: { width: '0rem', gutter: 1.0 },
-	sm: { width: '30rem', gutter: 1.5 },
-	md: { width: '48rem', gutter: 2.0 },
-	lg: { width: '62rem', gutter: 2.0 },
-	xg: { width: '80rem', gutter: 2.0 },
+	xs: { width:    0, gutter: 16 },
+	sm: { width:  480, gutter: 24 },
+	md: { width:  768, gutter: 32 },
+	lg: { width:  992, gutter: 32 },
+	xg: { width: 1280, gutter: 32 },
 }
