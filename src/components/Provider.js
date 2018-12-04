@@ -10,11 +10,11 @@ const Provider = ({children, columns, breakpoints}) => (
 Provider.defaultProps = {
 	columns: 12,
 	breakpoints: {
-		xs: { width:    0, gutter: 16 },
-		sm: { width:  480, gutter: 24 },
-		md: { width:  768, gutter: 32 },
-		lg: { width:  992, gutter: 32 },
-		xg: { width: 1280, gutter: 32 },
+		xs: { width:  '0rem', gutter: '1rem' },
+		sm: { width: '30rem', gutter: '1.5rem' },
+		md: { width: '48rem', gutter: '2rem' },
+		lg: { width: '62rem', gutter: '2rem' },
+		xg: { width: '80rem', gutter: '2.5rem' },
 	}
 }
 
