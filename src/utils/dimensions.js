@@ -1,4 +1,4 @@
-export const parseDimension = (value = 0) => {
+export const parse = (value = 0) => {
 	const type = typeof value
 	if(type === 'number') return value
 	if(type !== 'string') return 0
@@ -7,8 +7,8 @@ export const parseDimension = (value = 0) => {
 	return value
 }
 
-export const stringifyDimension = (value = 0) => (
-	!!parseDimension(value)
-		? `${parseDimension(value)}px`
+export const stringify = (value = 0) => (
+	!!parse(value)
+		? `${parse(value)}px`
 		: value
 )

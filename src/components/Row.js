@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components'
 import {mapBreakpoints} from '../utils/breakpoints'
-import {parseDimension, stringifyDimension} from '../utils/dimensions'
+import {parse, stringify} from '../utils/dimensions'
 import Cell from './Cell'
 
 const Row = styled.div`
@@ -11,14 +11,14 @@ const Row = styled.div`
 	flex-wrap: wrap;
 	align-items: flex-start;
 	${p => mapBreakpoints(p.theme.griding.breakpoints, ({gutter}) => `
-		margin-left: ${stringifyDimension(parseDimension(gutter)/-2)};
-		margin-right: ${stringifyDimension(parseDimension(gutter)/-2)};
-		max-width: calc(100% + ${stringifyDimension(parseDimension(gutter))});
+		margin-left: ${stringify(parse(gutter)/-2)};
+		margin-right: ${stringify(parse(gutter)/-2)};
+		max-width: calc(100% + ${stringify(parse(gutter))});
 	`)}
 	${p => p['vertical-gutter'] && (
 		mapBreakpoints(p.theme.griding.breakpoints, ({gutter}) => css`
-			margin: ${stringifyDimension(parseDimension(gutter)/-2)};
-			& ${Cell} {padding: ${stringifyDimension(parseDimension(gutter)/2)};}
+			margin: ${stringify(parse(gutter)/-2)};
+			& ${Cell} {padding: ${stringify(parse(gutter)/2)};}
 		`)
 	)}
 `
