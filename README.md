@@ -23,6 +23,7 @@ although there are — already — an infinite amount of grid packages (pure css
 
 - [x] finish `<ThemeProvider/>`
 - [x] parse different units
+- [ ] expose an `above` utility (or make it a lib on it's own)
 - [ ] props to handle alignments (?)
 - [ ] make vanilla style version
 
