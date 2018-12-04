@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, {css, ThemeProvider} from 'styled-components'
-import theme, {breakpoints} from './theme'
+import {columns, breakpoints} from './theme'
 import above from './above'
 
 const mapBreakpoints = fn => Object.keys(breakpoints)
@@ -13,7 +13,7 @@ const mapPropsBreakpoints = fn => props => Object.keys(props)
 const getCellDisplay = p => p.flex ? 'flex' : 'block'
 
 export const GridingProvider = ({children, ...props}) => (
-	<ThemeProvider theme={{griding: Object.assign({}, theme, props.theme)}}>
+	<ThemeProvider theme={{griding: Object.assign({}, {columns, breakpoints}, props.theme)}}>
 		{children}
 	</ThemeProvider>
 )
