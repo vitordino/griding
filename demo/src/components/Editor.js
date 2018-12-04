@@ -27,7 +27,7 @@ const Wrapper = styled.div`
 	font-size: 0.875rem;
 	color: #333;
 	position: sticky;
-	top: 5rem;
+	top: 6.25rem;
 	margin-bottom: 2rem;
 	${dots}
 	&:focus-within, &:hover, &:active{

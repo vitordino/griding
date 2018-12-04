@@ -21,14 +21,14 @@ const Wrapper = styled.div`
 	background: black;
 `
 
-const scope = {styled, GridingProvider, Row, Cell, Dotted}
+const leftPad = s => (s+'').length == 1 ? '0'+s : s
+
+const scope = {leftPad, styled, GridingProvider, Row, Cell, Dotted}
 
 const code =
-`
-// grid options (number of columns and breakpoints)
+`// grid options (number of columns and breakpoints)
 // can be passed as a theme prop on Provider
 
-const leftPad = s => (s+'').length == 1 ? '0'+s : s
 const twelve = Array.from({length: 12}, (v, i) => leftPad(i+1))
 
 const App = () => (
@@ -53,12 +53,7 @@ const App = () => {
 			<LiveProvider code={code} scope={scope} noInline>
 				<Wrapper>
 					<Container>
-						<Navbar
-							title={name}
-							to='https://github.com/vitordino/griding'
-							toggle={toggle}
-							horizontal={horizontal}
-						/>
+						<Navbar title={name} toggle={toggle} horizontal={horizontal}/>
 						<Row style={{alignItems: 'stretch', paddingTop: '1.875rem'}}>
 							<Cell xs={12} lg={horizontal ? 6 : 12}>
 								<Editor/>

@@ -10,25 +10,7 @@ const Wrapper = styled.nav`
 	top: 0;
 	background: black;
 	z-index: 1;
-	&:before{
-		transition: 0.5s all;
-		content: '';
-		background: currentColor;
-		position: absolute;
-		width: 0.375rem;
-		height: 0.375rem;
-		border-radius: 1px;
-		bottom: -0.25rem;
-		left: 0.375rem;
-		transform: rotate(45deg);
-		transform-origin: center;
-	}
-	&:hover{
-		color: white;
-		&:before{
-			left: calc(100% - 0.75rem);
-		}
-	}
+	padding: 0.5rem 0 0.375rem;
 `
 
 const Button = styled.button`
@@ -44,24 +26,23 @@ const Button = styled.button`
 	}
 `
 
-const Icon = () => (
-	<svg width='20' height='20' xmlns='http://www.w3.org/2000/svg'>
-		<g stroke='currentColor' strokeWidth='2' fill='none' fillRule='evenodd' strokeLinecap='round' strokeLinejoin='round'>
-			<path d='M1 1h7v18H1zM12 1h7v18h-7z'/>
-		</g>
+const Icon = props => (
+	<svg width='20' height='20' xmlns='http://www.w3.org/2000/svg' {...props}>
+		<path d='M1 1h7v18H1zM12 1h7v18h-7z' stroke='currentColor' strokeWidth='2' fill='none' strokeLinecap='round' strokeLinejoin='round'/>
+	</svg>
+)
+
+const CodeIcon = props => (
+	<svg width='24' height='20' xmlns='http://www.w3.org/2000/svg' {...props}>
+		<path d='M16 16l6-6-6-6M8 4l-6 6 6 6' stroke='currentColor' strokeWidth='2' fill='none' strokeLinecap='round' strokeLinejoin='round'/>
 	</svg>
 )
 
 const Title = styled.h1`
-	font-size: 2rem;
+	font-size: 1.75rem;
 	font-weight: 500;
 	flex: 1;
-	a{
-		user-select: none;
-		display: block;
-		text-decoration: none;
-		color: currentColor;
-	}
+	color: white;
 `
 
 const IconWrapper = styled.div`
@@ -75,14 +56,29 @@ const IconWrapper = styled.div`
 	`}
 `
 
-const Navbar = ({title, href, horizontal, toggle}) => (
+const Anchor = styled.a`
+	display: block;
+	text-decoration: none;
+	color: currentColor;
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&:hover{
+		color: white;
+	}
+`
+
+const Navbar = ({title, horizontal, toggle}) => (
 	<Wrapper>
-		<Title>
-			<a href={href}>{title}</a>
-		</Title>
+		<Title>{title}</Title>
+		<Anchor href='https://github.com/vitordino/griding'>
+			<CodeIcon style={{display: 'block'}}/>
+		</Anchor>
 		<Button onClick={toggle}>
 			<IconWrapper horizontal={horizontal}>
-				<Icon/>
+				<Icon style={{display: 'block'}}/>
 			</IconWrapper>
 		</Button>
 	</Wrapper>

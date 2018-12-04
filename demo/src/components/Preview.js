@@ -42,7 +42,8 @@ const Wrapper = styled.div`
 	color: #aaa;
 	background: white;
 	position: sticky;
-	top: 5rem;
+	top: 6.25rem;
+	margin-bottom: 2.125rem;
 	${dots({hover: '#aaa'})}
 	&:focus-within, &:hover, &:active{
 		${BlueprintWrapper}{
