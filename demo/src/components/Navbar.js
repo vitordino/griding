@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import above from '../../../src/above'
 
 const Wrapper = styled.nav`
 	display: flex;
@@ -40,9 +39,9 @@ const Button = styled.button`
 	cursor: pointer;
 	outline: none;
 	display: none;
-	${above.lg`
+	@media (min-width: 62rem) {
 		display: block;
-	`}
+	}
 `
 
 const Icon = () => (

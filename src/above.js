@@ -1,5 +1,4 @@
 import {css} from 'styled-components'
-import {breakpoints} from './theme'
 
 export const parseDimension = (value = 0) => {
 	const type = typeof value
@@ -11,7 +10,7 @@ export const parseDimension = (value = 0) => {
 }
 
 // Iterate through the breakpoints and create a above template
-const above = Object.keys(breakpoints).reduce((acc, label) => {
+const above = breakpoints => Object.keys(breakpoints).reduce((acc, label) => {
 	acc[label] = (...args) => css`
 		@media (min-width: ${breakpoints[label].width}) {
 			${css(...args)}
