@@ -24,7 +24,8 @@ const Wrapper = styled.div`
 const scope = {styled, GridingProvider, Row, Cell, Dotted}
 
 const code =
-`// grid options (number of columns and breakpoints)
+`
+// grid options (number of columns and breakpoints)
 // can be passed as a theme prop on Provider
 
 const leftPad = s => (s+'').length == 1 ? '0'+s : s

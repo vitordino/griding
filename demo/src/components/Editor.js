@@ -47,12 +47,26 @@ const Wrapper = styled.div`
 	}
 `
 
+const Import = () => (
+	<pre className='prism-code' style={{background: 'none', overflow: 'scroll'}}>
+		<span className='token keyword'>import </span>
+		<span className='token punctuation'>{`{ `}</span>
+		<span>GridingProvider</span>
+		<span className='token punctuation'>{`, `}</span>
+		<span>Row</span>
+		<span className='token punctuation'>{`, `}</span>
+		<span>Cell</span>
+		<span className='token punctuation'>{` }`}</span>
+		<span className='token keyword'> from </span>
+		<span className='token string'>'griding'</span>
+	</pre>
+)
+
 const Editor = props => (
 	<Wrapper>
-		<div>
-			<Tab><span/></Tab>
-			<LiveEditor {...props} style={{background: 'none', overflow: 'scroll'}}/>
-		</div>
+		<Tab><span/></Tab>
+		<Import/>
+		<LiveEditor {...props} style={{background: 'none', overflow: 'scroll'}}/>
 	</Wrapper>
 )
 
