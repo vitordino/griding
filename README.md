@@ -22,6 +22,7 @@ although there are — already — an infinite amount of grid packages (pure css
 ### roadmap
 
 - [x] finish `<ThemeProvider/>`
+- [x] parse different units
 - [ ] props to handle alignments (?)
 - [ ] make vanilla style version
 
@@ -98,7 +99,7 @@ mostly of this lib was done with [@leonardodino](https://github.com/leonardodino
 [npm-badge]: https://img.shields.io/npm/v/griding.png?style=flat-square
 [npm]: https://npmjs.org/package/griding
 
-[demo-badge]: https://img.shields.io/badge/🌐-demo-lightgray.svg?style=flat-square
+[demo-badge]: https://img.shields.io/badge/www-demo-lightgray.png?style=flat-square
 [demo]: https://griding.vitordino.com/
 
 [build-badge]: https://img.shields.io/travis/vitordino/griding/master.png?style=flat-square
