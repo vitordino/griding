@@ -19,17 +19,19 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^16.x",
     "styled-components": "^4.x"
   },
   "devDependencies": {
+    "react": "^16.x",
+    "styled-components": "^4.x",
     "nwb": "0.23.x"
   },
   "optionalDependencies": {
-    "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2",
-    "react-live": "^1.12.0"
+    "react": "^16.8.x",
+    "react-dom": "^16.8.x",
+    "react-live": "^1.12.x"
   },
   "author": "Vitor Dino <vitor@kunstdesign.com.br>",
   "homepage": "griding.vitordino.com",
