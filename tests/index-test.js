@@ -2,7 +2,7 @@ import expect from 'expect'
 import React from 'react'
 import {render, unmountComponentAtNode} from 'react-dom'
 
-import {GridingProvider, Row, Cell} from '../src/'
+import {Provider, Row, Cell} from '../src/'
 
 describe('Griding', () => {
 	let node
@@ -17,13 +17,13 @@ describe('Griding', () => {
 
 	it('renders without breaking', () => {
 		render(
-			<GridingProvider>
+			<Provider>
 				<Row>
 					<Cell xs={12} sm={6} md={4} lg={3} xg={2}>
 						lorem ipsum
 					</Cell>
 				</Row>
-			</GridingProvider>
+			</Provider>
 			, node, () => {
 			expect(node.innerHTML).toContain('lorem ipsum')
 		})

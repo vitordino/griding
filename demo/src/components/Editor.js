@@ -51,7 +51,7 @@ const Import = () => (
 	<pre className='prism-code' style={{background: 'none', overflow: 'scroll'}}>
 		<span className='token keyword'>import </span>
 		<span className='token punctuation'>{`{ `}</span>
-		<span>GridingProvider</span>
+		<span>Provider</span>
 		<span className='token punctuation'>{`, `}</span>
 		<span>Row</span>
 		<span className='token punctuation'>{`, `}</span>

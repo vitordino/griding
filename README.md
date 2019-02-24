@@ -46,10 +46,10 @@ npm install griding --save
 basic usage (using default options):
 
 ```jsx
-import {Row, Cell, GridingProvider} from '../../src'
+import {Row, Cell, Provider} from '../../src'
 
 const App = () => (
-  <GridingProvider>
+  <Provider>
     <Row vertical-gutter>
       <Cell xs={6} sm={4} md={3} lg={2}>
         <div>lorem</div>
@@ -58,7 +58,7 @@ const App = () => (
         <div>ipsum</div>
       </Cell>
     </Row>
-  </GridingProvider>
+  </Provider>
 )
 ```
 
@@ -66,7 +66,7 @@ const App = () => (
 customizing options:
 
 ```jsx
-import {Row, Cell, GridingProvider} from '../../src'
+import {Row, Cell, Provider} from '../../src'
 
 // it will understand pixels/rems to fit your needs [wip]
 const myCoolTheme = {
@@ -79,14 +79,14 @@ const myCoolTheme = {
 }
 
 const App = () => (
-  <GridingProvider theme={myCoolTheme}>
+  <Provider theme={myCoolTheme}>
     <Row>
       {/* look how cool, your own named breakpoints */}
       <Cell hey={6} thats={4} rad={3}>
         <div>lorem ipsum</div>
       </Cell>
     </Row>
-  </GridingProvider>
+  </Provider>
 )
 ```
 

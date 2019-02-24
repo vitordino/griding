@@ -2,7 +2,7 @@ import React from 'react'
 import {render} from 'react-dom'
 import styled from 'styled-components'
 import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live'
-import {Row, Cell, GridingProvider} from '../../src'
+import {Row, Cell, Provider} from '../../src'
 import {name} from '../../package.json'
 import useToggle from './utils/useToggle'
 import Editor from './components/Editor'
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 
 const leftPad = s => (s+'').length == 1 ? '0'+s : s
 
-const scope = {leftPad, styled, GridingProvider, Row, Cell, Dotted}
+const scope = {leftPad, styled, Provider, Row, Cell, Dotted}
 
 const code =
 `// grid options (number of columns and breakpoints)
@@ -32,7 +32,7 @@ const code =
 const twelve = Array.from({length: 12}, (v, i) => leftPad(i+1))
 
 const App = () => (
-	<GridingProvider>
+	<Provider>
 		<Row vertical-gutter>
 			{twelve.map(x => (
 				<Cell xs={6} sm={4} md={3} lg={2} key={x}>
@@ -40,7 +40,7 @@ const App = () => (
 				</Cell>
 			))}
 		</Row>
-	</GridingProvider>
+	</Provider>
 )
 
 render(App)
@@ -49,7 +49,7 @@ render(App)
 const App = () => {
 	const [horizontal, toggle] = useToggle(true)
 	return(
-		<GridingProvider>
+		<Provider>
 			<LiveProvider code={code} scope={scope} noInline>
 				<Wrapper>
 					<Container>
@@ -67,7 +67,7 @@ const App = () => {
 					<Footer/>
 				</Wrapper>
 			</LiveProvider>
-		</GridingProvider>
+		</Provider>
 	)
 }
 
