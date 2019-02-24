@@ -24,9 +24,6 @@ although there are — already — an infinite amount of grid packages (pure css
 - [x] finish `<ThemeProvider/>`
 - [x] parse different units
 - [ ] expose an `above` utility (or make it a lib on it's own)
-- [ ] props to handle alignments (?)
-- [ ] make vanilla style version
-
 
 ### installation
 
@@ -68,20 +65,17 @@ customizing options:
 ```jsx
 import {Row, Cell, Provider} from '../../src'
 
-// it will understand pixels/rems to fit your needs [wip]
-const myCoolTheme = {
-  columns: 13,
-  breakpoints: {
-    hey:   { width: 0, gutter: '16px' },
-    thats: { width: 480, gutter: '1.5rem' },
-    rad:   { width: '48rem', gutter: 32 },
-  }
+// it will understand pixels/rems to fit your needs [unstable]
+const breakpoints = {
+  hey:   { width: 0, gutter: '16px' },
+  thats: { width: 480, gutter: '1.5rem' },
+  rad:   { width: '48rem', gutter: 32 },
 }
 
 const App = () => (
-  <Provider theme={myCoolTheme}>
+  <Provider breakpoints={breakpoints} columns={13}>
     <Row>
-      {/* look how cool, your own named breakpoints */}
+      {/* look how cool, your own named breakpoints & custom column count */}
       <Cell hey={6} thats={4} rad={3}>
         <div>lorem ipsum</div>
       </Cell>
@@ -93,7 +87,7 @@ const App = () => (
 
 #### thanks
 
-mostly of this lib was done with [@leonardodino](https://github.com/leonardodino) great help and probably wouldn't be possible without it.
+<sub>mostly of this lib was done with [@leonardodino](https://github.com/leonardodino) great help and probably wouldn't be possible without it.</sub>
 
 
 

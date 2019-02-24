@@ -27,7 +27,7 @@ const scope = {leftPad, styled, Provider, Row, Cell, Dotted}
 
 const code =
 `// grid options (number of columns and breakpoints)
-// can be passed as a theme prop on Provider
+// can be passed as props to Provider
 
 const twelve = Array.from({length: 12}, (v, i) => leftPad(i+1))
 
