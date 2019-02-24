@@ -4,6 +4,7 @@
 [![demo][demo-badge]][demo]
 [![Travis][build-badge]][build]
 [![Coveralls][coveralls-badge]][coveralls]
+[![Bundlephobia][bundlephobia-badge]][bundlephobia]
 
 
 > **griding** is a set of react components to make grid layouts easier
@@ -102,3 +103,6 @@ const App = () => (
 
 [coveralls-badge]: https://img.shields.io/coveralls/vitordino/griding/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/vitordino/griding
+
+[bundlephobia-badge]: https://img.shields.io/bundlephobia/minzip/griding.png?style=flat-square
+[bundlephobia]: https://bundlephobia.com/result?p=griding
