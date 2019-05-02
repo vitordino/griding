@@ -20,7 +20,7 @@
     "test:watch": "nwb test-react --server"
   },
   "peerDependencies": {
-    "react": "^16.x",
+    "react": "^16.8.x",
     "styled-components": "^4.x"
   },
   "devDependencies": {
