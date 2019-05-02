@@ -50,8 +50,5 @@
     "grid",
     "flexbox",
     "layout"
-  ],
-  "dependencies": {
-    "react-window-size": "^1.2.2"
-  }
+  ]
 }
