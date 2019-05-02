@@ -10,13 +10,16 @@ const getVisibleBreakpoints = (breakpoints, innerWidth) => (
 )
 
 const useBreakpoints = () => {
-	const theme = useTheme()
-	const breakpoints = theme.griding.breakpoints
+	const [state, setState] = useState([])
 	const {innerWidth} = useWindowSize()
-	const [state, setState] = useState(breakpoints)
-	useState(() => {
+	const theme = useTheme()
+
+	const breakpoints = theme.griding.breakpoints
+
+	useEffect(() => {
 		setState(getVisibleBreakpoints(breakpoints, innerWidth))
 	}, [innerWidth])
+
 	return state
 }
 
