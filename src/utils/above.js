@@ -15,7 +15,7 @@ export const utility = breakpoints => (
 
 // Use a string to generate media query based on breakpoints keys
 export const above = (label) => (...args) => ({theme}) => css`
-	@media (min-width: ${stringify(parse(theme.breakpoints[label].width))}) {
+	@media (min-width: ${stringify(parse(theme.griding.breakpoints[label].width))}) {
 		${css(...args)}
 	}
 `
