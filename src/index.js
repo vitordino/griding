@@ -10,3 +10,4 @@ export { default as useBreakpoints } from './hooks/useBreakpoints'
 export { default as useCurrentBreakpoint } from './hooks/useCurrentBreakpoint'
 
 export { default as above } from './utils/above'
+export { mapBreakpoints, mapPropsBreakpoints } from './utils/breakpoints'
