@@ -31,7 +31,7 @@
   "optionalDependencies": {
     "react": "^16.8.x",
     "react-dom": "^16.8.x",
-    "react-live": "^1.12.x"
+    "react-live": "^2.1.2"
   },
   "author": "Vitor Dino <vitor@kunstdesign.com.br>",
   "homepage": "griding.vitordino.com",
