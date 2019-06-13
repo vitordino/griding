@@ -47,6 +47,15 @@ const Wrapper = styled.div`
 	}
 `
 
+const StyledLiveEditor = styled(LiveEditor)`
+	background: none;
+	overflow: scroll;
+	tab-size: 2;
+	& * {
+		outline: none;
+	}
+`
+
 const Import = () => (
 	<pre className='prism-code' style={{background: 'none', overflow: 'scroll'}}>
 		<span className='token keyword'>import </span>
@@ -66,7 +75,7 @@ const Editor = props => (
 	<Wrapper>
 		<Tab><span/></Tab>
 		<Import/>
-		<LiveEditor {...props} style={{background: 'none', overflow: 'scroll'}}/>
+		<StyledLiveEditor {...props}/>
 	</Wrapper>
 )
 
