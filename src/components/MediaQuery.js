@@ -1,7 +1,6 @@
 import React from 'react'
 import {withTheme} from 'styled-components';
 import useMediaQuery from '../hooks/useMediaQuery'
-import {parse} from '../utils/dimensions'
 
 const MediaQuery = props => {
 	const visible = useMediaQuery(props)

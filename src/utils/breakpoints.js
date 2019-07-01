@@ -2,7 +2,8 @@ import { above } from './above'
 
 export const mapTheme = fn => props => {
 	const breakpoints = props.theme.griding.breakpoints
-	return Object.keys(breakpoints).map(label => above(label)`${fn(breakpoints[label], props)}`)
+	return Object.keys(breakpoints)
+		.map(label => above(label)`${fn(breakpoints[label], props)}`)
 }
 
 export const mapBreakpoints = fn => props => {

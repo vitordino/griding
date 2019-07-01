@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import {mapTheme, mapBreakpoints} from '../utils/breakpoints'
-import {parse, stringify} from '../utils/dimensions'
 
 const getCellDisplay = p => p.flex ? 'flex' : 'block'
 

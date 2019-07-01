@@ -1,6 +1,5 @@
 import styled, {css} from 'styled-components'
 import {mapTheme} from '../utils/breakpoints'
-import {parse, stringify} from '../utils/dimensions'
 import Cell from './Cell'
 
 const Row = styled.div`
@@ -16,8 +15,8 @@ const Row = styled.div`
 		max-width: calc(100% + ${gutter}px);
 	`)}
 	${mapTheme(({gutter}, props) => props['vertical-gutter'] && css`
-		margin: ${stringify(parse(gutter)/-2)};
-		& ${Cell} {padding: ${stringify(parse(gutter)/2)};}
+		margin: ${gutter/-2}px;
+		& ${Cell} {padding: ${gutter/2}px;}
 	`)}
 `
 

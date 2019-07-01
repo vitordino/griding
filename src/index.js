@@ -9,6 +9,5 @@ export { default as useMediaQuery } from './hooks/useMediaQuery'
 export { default as useBreakpoints } from './hooks/useBreakpoints'
 export { default as useCurrentBreakpoint } from './hooks/useCurrentBreakpoint'
 
-export { default as above } from './utils/above'
+export { above } from './utils/above'
 export { mapTheme, mapBreakpoints } from './utils/breakpoints'
-export { parse, stringify } from './utils/dimensions'
