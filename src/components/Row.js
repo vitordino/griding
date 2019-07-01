@@ -10,17 +10,15 @@ const Row = styled.div`
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: flex-start;
-	${p => mapBreakpoints(p.theme.griding.breakpoints, ({gutter}) => `
-		margin-left: ${stringify(parse(gutter)/-2)};
-		margin-right: ${stringify(parse(gutter)/-2)};
-		max-width: calc(100% + ${stringify(parse(gutter))});
+	${mapBreakpoints(({gutter}, props) => !props['vertical-gutter'] && `
+		margin-left: ${gutter/-2}px;
+		margin-right: ${gutter/-2}px;
+		max-width: calc(100% + ${gutter}px);
 	`)}
-	${p => p['vertical-gutter'] && (
-		mapBreakpoints(p.theme.griding.breakpoints, ({gutter}) => css`
-			margin: ${stringify(parse(gutter)/-2)};
-			& ${Cell} {padding: ${stringify(parse(gutter)/2)};}
-		`)
-	)}
+	${mapBreakpoints(({gutter}, props) => props['vertical-gutter'] && css`
+		margin: ${stringify(parse(gutter)/-2)};
+		& ${Cell} {padding: ${stringify(parse(gutter)/2)};}
+	`)}
 `
 
 export default Row

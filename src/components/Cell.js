@@ -7,9 +7,9 @@ const getCellDisplay = p => p.flex ? 'flex' : 'block'
 const Cell = styled.div`
 	box-sizing: border-box;
 	display: ${getCellDisplay};
-	${p => mapBreakpoints(p.theme.griding.breakpoints, ({gutter}) => `
-		padding-left: ${stringify(parse(gutter)/2)};
-		padding-right: ${stringify(parse(gutter)/2)};
+	${mapBreakpoints(({gutter}) => `
+		padding-left: ${gutter/2}px;
+		padding-right: ${gutter/2}px;
 	`)}
 	${mapPropsBreakpoints((value, props) => `
 		display: ${value > 0 ? getCellDisplay(props) : 'none'};
