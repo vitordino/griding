@@ -1,11 +1,11 @@
 import { above } from './above'
 
-export const mapBreakpoints = fn => props => {
+export const mapTheme = fn => props => {
 	const breakpoints = props.theme.griding.breakpoints
 	return Object.keys(breakpoints).map(label => above(label)`${fn(breakpoints[label], props)}`)
 }
 
-export const mapPropsBreakpoints = fn => props => {
+export const mapBreakpoints = fn => props => {
 	const breakpoints = props.theme.griding.breakpoints
 	return Object.keys(props)
 		.filter(prop => Object.keys(breakpoints).includes(prop))
