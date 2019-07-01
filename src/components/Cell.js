@@ -11,7 +11,7 @@ const Cell = styled.div`
 		padding-left: ${stringify(parse(gutter)/2)};
 		padding-right: ${stringify(parse(gutter)/2)};
 	`)}
-	${p => mapPropsBreakpoints(p.theme.griding.breakpoints, (value, props) => `
+	${mapPropsBreakpoints((value, props) => `
 		display: ${value > 0 ? getCellDisplay(props) : 'none'};
 		width: ${(value / props.theme.griding.columns || 1) * 100 + '%'};
 	`)}
