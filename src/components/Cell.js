@@ -6,7 +6,7 @@ const getCellDisplay = p => p.flex ? 'flex' : 'block'
 const Cell = styled.div`
 	box-sizing: border-box;
 	display: ${getCellDisplay};
-	${mapTheme(({gutter}) => `
+	${mapTheme(({gutter}) => gutter && `
 		padding-left: ${gutter / 2}px;
 		padding-right: ${gutter / 2}px;
 	`)}
