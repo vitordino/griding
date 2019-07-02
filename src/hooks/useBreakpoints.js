@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import useTheme from './useTheme'
 import useWindowSize from './useWindowSize'
-import {parse} from '../utils/dimensions'
 
 const getVisibleBreakpoints = (breakpoints, innerWidth) => (
 	Object.entries(breakpoints)
-		.filter(([_, value]) => parseFloat(value.width)*16 < innerWidth)
+		.filter(([_, value]) => value.width < innerWidth)
 		.map(([key]) => key)
 )
 

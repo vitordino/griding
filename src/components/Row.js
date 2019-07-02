@@ -1,6 +1,5 @@
-import styled, {css} from 'styled-components'
-import {mapBreakpoints} from '../utils/breakpoints'
-import {parse, stringify} from '../utils/dimensions'
+import styled from 'styled-components'
+import {mapTheme} from '../utils/breakpoints'
 import Cell from './Cell'
 
 const Row = styled.div`
@@ -10,17 +9,15 @@ const Row = styled.div`
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: flex-start;
-	${p => mapBreakpoints(p.theme.griding.breakpoints, ({gutter}) => `
-		margin-left: ${stringify(parse(gutter)/-2)};
-		margin-right: ${stringify(parse(gutter)/-2)};
-		max-width: calc(100% + ${stringify(parse(gutter))});
+	${mapTheme(({gutter}, props) => gutter && !props['vertical-gutter'] && `
+		margin-left: ${gutter/-2}px;
+		margin-right: ${gutter/-2}px;
+		max-width: calc(100% + ${gutter}px);
 	`)}
-	${p => p['vertical-gutter'] && (
-		mapBreakpoints(p.theme.griding.breakpoints, ({gutter}) => css`
-			margin: ${stringify(parse(gutter)/-2)};
-			& ${Cell} {padding: ${stringify(parse(gutter)/2)};}
-		`)
-	)}
+	${mapTheme(({gutter}, props) => gutter && props['vertical-gutter'] && `
+		margin: ${gutter/-2}px;
+		& ${Cell} {padding: ${gutter/2}px;}
+	`)}
 `
 
 export default Row
