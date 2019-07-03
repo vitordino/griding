@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import useTheme from './useTheme'
 import useWindowSize from './useWindowSize'
+import { Constraints } from 'types'
 
-const useMediaQuery = ({ above = 0, below = Infinity }) => {
+const useMediaQuery = ({ above = 0, below = Infinity }: Constraints) => {
 	const theme = useTheme()
 	const { innerWidth } = useWindowSize()
 	const [visible, setVisible] = useState(true)

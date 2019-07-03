@@ -24,7 +24,7 @@ const A = styled.a`
 	}
 `
 
-const Footer = props => (
+const Footer = () => (
 	<Container>
 		<Wrapper>
 			<A href='https://kunst.com.br'>kunst</A>

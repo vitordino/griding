@@ -1,5 +1,5 @@
 # dependencies
-/node_modules
+node_modules
 package-lock.json
 
 # misc
@@ -13,9 +13,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# nwb
-/coverage
-/demo/dist
-/es
-/lib
-/umd
+.cache
+.rts2_cache_cjs
+.rts2_cache_esm
+.rts2_cache_umd
+.vscode
+
+dist
