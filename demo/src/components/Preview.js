@@ -1,15 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import {LivePreview} from 'react-live'
+import { LivePreview } from 'react-live'
 import dots from '../utils/dots'
-import {Row, Cell} from '../../../src'
+import { Row, Cell } from '../../../src'
 
-const twelve = Array.from({length: 12}, (x, i) => i)
+const twelve = Array.from({ length: 12 }, (x, i) => i)
 
 const Tab = styled.div`
 	padding-bottom: 1rem;
 	display: block;
-	&:before, & span, &:after {
+	&:before,
+	& span,
+	&:after {
 		content: '';
 		height: 0.75rem;
 		width: 0.75rem;
@@ -34,7 +36,7 @@ const BlueprintWrapper = styled.div`
 
 const Wrapper = styled.div`
 	border: 2px dashed currentColor;
-	box-shadow: 0 1.25rem 4rem rgba(0,0,0,.55);
+	box-shadow: 0 1.25rem 4rem rgba(0, 0, 0, 0.55);
 	border-radius: 0.25rem;
 	padding: 1.25rem;
 	max-width: 100%;
@@ -44,9 +46,9 @@ const Wrapper = styled.div`
 	position: sticky;
 	top: 6.25rem;
 	margin-bottom: 2.125rem;
-	${dots({hover: '#aaa'})}
-	&:focus-within, &:hover, &:active{
-		${BlueprintWrapper}{
+	${dots({ hover: '#aaa' })}
+	&:focus-within, &:hover, &:active {
+		${BlueprintWrapper} {
 			opacity: 1;
 		}
 		${Tab}:before {
@@ -66,14 +68,16 @@ const Wrapper = styled.div`
 
 const Marker = styled.div`
 	height: 100%;
-	background: rgba(0,0,238, 0.06);
+	background: rgba(0, 0, 238, 0.06);
 `
 
 const Blueprint = () => (
 	<BlueprintWrapper>
-		<Row style={{height: '100%'}}>
+		<Row style={{ height: '100%' }}>
 			{twelve.map(x => (
-				<Cell xs={1} key={x} style={{height: '100%'}}><Marker/></Cell>
+				<Cell xs={1} key={x} style={{ height: '100%' }}>
+					<Marker />
+				</Cell>
 			))}
 		</Row>
 	</BlueprintWrapper>
@@ -81,10 +85,12 @@ const Blueprint = () => (
 
 const Preview = props => (
 	<Wrapper>
-		<Tab><span/></Tab>
-		<div style={{position: 'relative', padding: '1rem 0'}}>
-			<LivePreview {...props}/>
-			<Blueprint/>
+		<Tab>
+			<span />
+		</Tab>
+		<div style={{ position: 'relative', padding: '1rem 0' }}>
+			<LivePreview {...props} />
+			<Blueprint />
 		</div>
 	</Wrapper>
 )

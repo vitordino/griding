@@ -1,9 +1,9 @@
 import React from 'react'
-import {render} from 'react-dom'
+import { render } from 'react-dom'
 import styled from 'styled-components'
-import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live'
-import {Row, Cell, Provider} from '../../src'
-import {name} from '../../package.json'
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
+import { Row, Cell, Provider } from '../../src'
+import { name } from '../../package.json'
 import useToggle from './utils/useToggle'
 import Editor from './components/Editor'
 import Preview from './components/Preview'
@@ -21,12 +21,11 @@ const Wrapper = styled.div`
 	background: black;
 `
 
-const leftPad = s => (s+'').length == 1 ? '0'+s : s
+const leftPad = s => ((s + '').length == 1 ? '0' + s : s)
 
-const scope = {leftPad, styled, Provider, Row, Cell, Dotted}
+const scope = { leftPad, styled, Provider, Row, Cell, Dotted }
 
-const code =
-`// grid options (number of columns and breakpoints)
+const code = `// grid options (number of columns and breakpoints)
 // can be passed as props to Provider
 
 const twelve = Array.from({length: 12}, (v, i) => leftPad(i+1))
@@ -48,27 +47,29 @@ render(App)
 
 const App = () => {
 	const [horizontal, toggle] = useToggle(true)
-	return(
+	return (
 		<Provider>
 			<LiveProvider code={code} scope={scope} noInline>
 				<Wrapper>
 					<Container>
-						<Navbar title={name} toggle={toggle} horizontal={horizontal}/>
-						<Row style={{alignItems: 'stretch', paddingTop: '1.875rem'}}>
+						<Navbar title={name} toggle={toggle} horizontal={horizontal} />
+						<Row style={{ alignItems: 'stretch', paddingTop: '1.875rem' }}>
 							<Cell xs={12} lg={horizontal ? 6 : 12}>
-								<Editor/>
+								<Editor />
 							</Cell>
 							<Cell xs={12} lg={horizontal ? 6 : 12}>
-								<ErrorMessage><LiveError/></ErrorMessage>
-								<Preview/>
+								<ErrorMessage>
+									<LiveError />
+								</ErrorMessage>
+								<Preview />
 							</Cell>
 						</Row>
 					</Container>
-					<Footer/>
+					<Footer />
 				</Wrapper>
 			</LiveProvider>
 		</Provider>
 	)
 }
 
-render(<App/>, document.querySelector('#demo'))
+render(<App />, document.querySelector('#demo'))

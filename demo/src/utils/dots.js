@@ -1,4 +1,4 @@
-const dots = ({hover = 'white'}) =>`
+const dots = ({ hover = 'white' }) => `
 	&:before, &:after{
 		transition: 0.2s all;
 		content: '';

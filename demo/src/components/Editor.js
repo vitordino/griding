@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import {LiveEditor} from 'react-live'
+import { LiveEditor } from 'react-live'
 import dots from '../utils/dots'
 
 const Tab = styled.div`
 	padding-bottom: 1rem;
 	display: block;
-	&:before, & span, &:after {
+	&:before,
+	& span,
+	&:after {
 		content: '';
 		height: 0.75rem;
 		width: 0.75rem;
@@ -20,7 +22,7 @@ const Tab = styled.div`
 const Wrapper = styled.div`
 	border: 2px dashed #333;
 	background: black;
-	box-shadow: 0 1.25rem 4rem rgba(0,0,0,.55);
+	box-shadow: 0 1.25rem 4rem rgba(0, 0, 0, 0.55);
 	border-radius: 0.25rem;
 	padding: 1.25rem;
 	max-width: 100%;
@@ -30,7 +32,7 @@ const Wrapper = styled.div`
 	top: 6.25rem;
 	margin-bottom: 2rem;
 	${dots}
-	&:focus-within, &:hover, &:active{
+	&:focus-within, &:hover, &:active {
 		border-color: white;
 		${Tab}:before {
 			background-color: #f85955;
@@ -57,7 +59,10 @@ const StyledLiveEditor = styled(LiveEditor)`
 `
 
 const Import = () => (
-	<pre className='prism-code' style={{background: 'none', overflow: 'scroll'}}>
+	<pre
+		className='prism-code'
+		style={{ background: 'none', overflow: 'scroll' }}
+	>
 		<span className='token keyword'>import </span>
 		<span className='token punctuation'>{`{ `}</span>
 		<span>Provider</span>
@@ -73,9 +78,11 @@ const Import = () => (
 
 const Editor = props => (
 	<Wrapper>
-		<Tab><span/></Tab>
-		<Import/>
-		<StyledLiveEditor {...props}/>
+		<Tab>
+			<span />
+		</Tab>
+		<Import />
+		<StyledLiveEditor {...props} />
 	</Wrapper>
 )
 

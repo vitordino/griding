@@ -14,7 +14,7 @@ const Dotted = styled.code`
 	color: #aaa;
 	background: white;
 	cursor: pointer;
-	${dots({hover: '#333'})}
+	${dots({ hover: '#333' })}
 `
 
 export default Dotted

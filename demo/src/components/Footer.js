@@ -19,7 +19,7 @@ const A = styled.a`
 	font-size: 0.875rem;
 	font-weight: 500;
 	letter-spacing: 0.025rem;
-	&:hover{
+	&:hover {
 		color: white;
 	}
 `

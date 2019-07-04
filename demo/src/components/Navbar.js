@@ -28,13 +28,27 @@ const Button = styled.button`
 
 const Icon = props => (
 	<svg width='20' height='20' xmlns='http://www.w3.org/2000/svg' {...props}>
-		<path d='M1 1h7v18H1zM12 1h7v18h-7z' stroke='currentColor' strokeWidth='2' fill='none' strokeLinecap='round' strokeLinejoin='round'/>
+		<path
+			d='M1 1h7v18H1zM12 1h7v18h-7z'
+			stroke='currentColor'
+			strokeWidth='2'
+			fill='none'
+			strokeLinecap='round'
+			strokeLinejoin='round'
+		/>
 	</svg>
 )
 
 const CodeIcon = props => (
 	<svg width='24' height='20' xmlns='http://www.w3.org/2000/svg' {...props}>
-		<path d='M16 16l6-6-6-6M8 4l-6 6 6 6' stroke='currentColor' strokeWidth='2' fill='none' strokeLinecap='round' strokeLinejoin='round'/>
+		<path
+			d='M16 16l6-6-6-6M8 4l-6 6 6 6'
+			stroke='currentColor'
+			strokeWidth='2'
+			fill='none'
+			strokeLinecap='round'
+			strokeLinejoin='round'
+		/>
 	</svg>
 )
 
@@ -51,7 +65,9 @@ const IconWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	${p => p.horizontal && `
+	${p =>
+		p.horizontal &&
+		`
 		transform: rotate(90deg);
 	`}
 `
@@ -65,20 +81,20 @@ const Anchor = styled.a`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	&:hover{
+	&:hover {
 		color: white;
 	}
 `
 
-const Navbar = ({title, horizontal, toggle}) => (
+const Navbar = ({ title, horizontal, toggle }) => (
 	<Wrapper>
 		<Title>{title}</Title>
 		<Anchor href='https://github.com/vitordino/griding'>
-			<CodeIcon style={{display: 'block'}}/>
+			<CodeIcon style={{ display: 'block' }} />
 		</Anchor>
 		<Button onClick={toggle}>
 			<IconWrapper horizontal={horizontal}>
-				<Icon style={{display: 'block'}}/>
+				<Icon style={{ display: 'block' }} />
 			</IconWrapper>
 		</Button>
 	</Wrapper>

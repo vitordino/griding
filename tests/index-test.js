@@ -1,7 +1,7 @@
 import expect from 'expect'
 import React from 'react'
 import styled from 'styled-components'
-import {render, unmountComponentAtNode} from 'react-dom'
+import { render, unmountComponentAtNode } from 'react-dom'
 
 import {
 	Provider,
@@ -26,7 +26,7 @@ const StyledAbove = styled.div`
 const Test = () => {
 	const theme = useTheme()
 	const windowSize = useWindowSize()
-	const mediaQuery = useMediaQuery({above: 'md'})
+	const mediaQuery = useMediaQuery({ above: 'md' })
 	const breakpoints = useBreakpoints()
 	const currentBreakpoint = useCurrentBreakpoint()
 	return (
@@ -67,9 +67,13 @@ describe('Griding', () => {
 
 	it('renders without breaking', () => {
 		render(
-			<Provider><Test/></Provider>
-			, node, () => {
-			expect(node.innerHTML).toContain('lorem ipsum')
-		})
+			<Provider>
+				<Test />
+			</Provider>,
+			node,
+			() => {
+				expect(node.innerHTML).toContain('lorem ipsum')
+			},
+		)
 	})
 })

@@ -1,5 +1,5 @@
-import {useContext} from 'react'
-import {ThemeContext} from 'styled-components'
+import { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
 
 const useTheme = () => useContext(ThemeContext)
 
