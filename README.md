@@ -69,11 +69,10 @@ const App = () => (
 ```jsx
 import { Row, Cell, Provider } from 'griding'
 
-// it will understand pixels/rems to fit your needs
 const breakpoints = {
-  hey: { width: 0, gutter: '16px' },
-  thats: { width: '480px', gutter: '1.5rem' },
-  rad: { width: '48rem', gutter: 32 },
+  hey: { width: 0, gutter: 16 },
+  thats: { width: 480, gutter: 24 },
+  rad: { width: 768, gutter: 32 },
 }
 
 const App = () => (
@@ -117,9 +116,7 @@ receives an object with optional `above` and `below` parameters and returns a bo
 
 - a string denoting a breakpoint
 
-- a string with `px` or `rem`
-
-- or a number of pixels
+- a number of pixels
 
 the default parameters are `below: 0`, `above: Infinity`, therefore, if no parameters are provided, it will always return `true`
 
