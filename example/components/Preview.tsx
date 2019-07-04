@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { LivePreview } from 'react-live'
 import dots from '../utils/dots'
-import { Row, Cell } from '../../../src'
+import { Row, Cell } from '../../src'
 
 const twelve = Array.from({ length: 12 }, (x, i) => i)
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
 import styled from 'styled-components'
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
-import { Row, Cell, Provider } from '../../src'
-import { name } from '../../package.json'
+import { LiveProvider, LiveError } from 'react-live'
+import { Row, Cell, Provider } from '../src'
+import { name } from '../package.json'
 import useToggle from './utils/useToggle'
 import Editor from './components/Editor'
 import Preview from './components/Preview'
@@ -72,4 +72,4 @@ const App = () => {
 	)
 }
 
-render(<App />, document.querySelector('#demo'))
+render(<App />, document.querySelector('#root'))

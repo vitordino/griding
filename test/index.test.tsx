@@ -1,4 +1,3 @@
-import expect from 'expect'
 import React from 'react'
 import styled from 'styled-components'
 import { render, unmountComponentAtNode } from 'react-dom'
@@ -14,7 +13,7 @@ import {
 	useBreakpoints,
 	useCurrentBreakpoint,
 	above,
-} from '../src/'
+} from '../src'
 
 const StyledAbove = styled.div`
 	display: none;
@@ -55,7 +54,7 @@ const Test = () => {
 }
 
 describe('Griding', () => {
-	let node
+	let node: Element
 
 	beforeEach(() => {
 		node = document.createElement('div')

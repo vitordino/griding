@@ -59,7 +59,7 @@ const Title = styled.h1`
 	color: white;
 `
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.div<{ horizontal: boolean }>`
 	width: 3rem;
 	height: 3rem;
 	display: flex;

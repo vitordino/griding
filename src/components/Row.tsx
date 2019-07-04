@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { mapTheme } from '../utils/breakpoints'
 import Cell from './Cell'
 
-const Row = styled.div`
+const Row = styled.div<{ ['vertical-gutter']?: boolean }>`
 	box-sizing: border-box;
 	flex: 1;
 	display: flex;

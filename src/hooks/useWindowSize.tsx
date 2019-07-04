@@ -14,10 +14,9 @@ const useWindowSize = () => {
 	}
 
 	useEffect(() => {
-		w && window.addEventListener('resize', handleResize)
-		return () => {
-			w && window.removeEventListener('resize', handleResize)
-		}
+		if (!w) return
+		window.addEventListener('resize', handleResize)
+		return () => window.removeEventListener('resize', handleResize)
 	}, [])
 
 	return windowSize
