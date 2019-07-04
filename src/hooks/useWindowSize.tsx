@@ -8,10 +8,8 @@ const getSize = () => ({
 })
 
 const useWindowSize = () => {
-	const [windowSize, setWindowSize] = useState(getSize())
-	const handleResize = () => {
-		setWindowSize(getSize())
-	}
+	const [windowSize, setWindowSize] = useState(getSize)
+	const handleResize = () => setWindowSize(getSize)
 
 	useEffect(() => {
 		if (!w) return
