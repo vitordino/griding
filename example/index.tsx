@@ -39,7 +39,7 @@ const Wrapper = styled.div`
 	background: black;
 `
 
-const leftPad = s => ((s + '').length == 1 ? '0' + s : s)
+const leftPad = (s: number) => ((s + '').length == 1 ? '0' + s : s).toString()
 
 const scope = { leftPad, styled, Provider, Row, Cell, Dotted }
 

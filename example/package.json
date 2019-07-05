@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html",
+    "type-check": "tsc --noEmit",
     "build": "parcel build index.html"
   },
   "dependencies": {
@@ -13,11 +14,13 @@
   },
   "alias": {
     "react": "../node_modules/react",
-    "react-dom": "../node_modules/react-dom"
+    "react-dom": "../node_modules/react-dom",
+    "styled-components": "../node_modules/styled-components"
   },
   "devDependencies": {
     "@types/react": "^16.8.15",
     "@types/react-dom": "^16.8.4",
+    "@types/styled-components": "^4.1.16",
     "parcel": "^1.12.3",
     "typescript": "^3.4.5"
   }

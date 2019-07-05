@@ -772,12 +772,29 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-native@*":
+  version "0.60.0"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.60.0.tgz#992ecf1e59c4a92ffa1c1b92c669802e433acd05"
+  integrity sha512-9av+Wgh3j7nQzK6MXIGMqc57M53Ilfcyhq49SRzO/Jv9e7PdQNjJrCiXoHSvtKwuQpwxMkomAfnbcxxkp0zzBw==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^16.8.15":
   version "16.8.22"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.22.tgz#7f18bf5ea0c1cad73c46b6b1c804a3ce0eec6d54"
   integrity sha512-C3O1yVqk4sUXqWyx0wlys76eQfhrQhiDhDlHBrjER76lR2S2Agiid/KpOU9oCqj1dISStscz7xXz1Cg8+sCQeA==
   dependencies:
     "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/styled-components@^4.1.16":
+  version "4.1.16"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.16.tgz#63fb33d02bc41d70a3af88711849b6df5d2a58e0"
+  integrity sha512-h4VtEopz0AS2oAbZlVSG1gnEhvx0LXcmYn9jD/y8Z/OHimsQygYFeDPbUDH/rJOaQu3T+PgAgRtOTG2IZyUTVg==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
     csstype "^2.2.0"
 
 abab@^2.0.0:
