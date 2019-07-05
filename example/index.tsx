@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import styled from 'styled-components'
+import styled, { createGlobalStyle as css } from 'styled-components'
 import { LiveProvider, LiveError } from 'react-live'
 import { Row, Cell, Provider } from '../src'
 import { name } from '../package.json'
@@ -12,7 +12,25 @@ import Navbar from './components/Navbar'
 import Dotted from './components/Dotted'
 import Footer from './components/Footer'
 import ErrorMessage from './components/ErrorMessage'
-import './reset.css'
+import 'minireset.css'
+
+const GlobalStyle = css`
+	html {
+		background: black;
+		font: 16px/1.5 'SF Pro Text', 'Helvetica Neue', 'Helvetica', -apple-system,
+			BlinkMacSystemFont, Roboto, Arial, sans-serif, 'SF Pro Icons',
+			'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+		text-rendering: optimizeLegibility;
+		-moz-osx-font-smoothing: grayscale;
+		font-smoothing: antialiased;
+		-webkit-font-smoothing: antialiased;
+	}
+	pre,
+	code {
+		font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono',
+			'Droid Sans Mono', 'Source Code Pro', monospace;
+	}
+`
 
 const Wrapper = styled.div`
 	display: flex;
@@ -51,6 +69,7 @@ const App = () => {
 		<Provider>
 			<LiveProvider code={code} scope={scope} noInline>
 				<Wrapper>
+					<GlobalStyle />
 					<Container>
 						<Navbar title={name} toggle={toggle} horizontal={horizontal} />
 						<Row style={{ alignItems: 'stretch', paddingTop: '1.875rem' }}>
