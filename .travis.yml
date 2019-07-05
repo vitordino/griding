@@ -4,13 +4,24 @@ language: node_js
 node_js:
   - 8
 
-before_install:
-  - npm install codecov.io coveralls
+cache:
+  yarn: true
+  directories:
+    - node_modules
+    - example/node_modules
+
+install:
+  - yarn --frozen-lockfile --silent --non-interactive
+  - yarn --frozen-lockfile --silent --non-interactive --cwd example
+
+script:
+  - yarn type-check
+  - yarn --cwd example type-check
+  - yarn test --coverage
 
 after_success:
-  - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - yarn global add codecov coveralls
+  - codecov && coveralls < ./coverage/lcov.info
 
-branches:
-  only:
-    - master
+notifications:
+  email: false
