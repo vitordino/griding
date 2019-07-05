@@ -30,6 +30,10 @@ const GlobalStyle = css`
 		font-smoothing: antialiased;
 		-webkit-font-smoothing: antialiased;
 	}
+	::selection {
+		background: rgba(255, 255, 255, 0.99);
+		color: rgba(0, 0, 0, 0.99);
+	}
 	pre,
 	code {
 		font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono',
