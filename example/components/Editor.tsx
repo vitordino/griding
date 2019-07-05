@@ -76,7 +76,8 @@ const Import = () => (
 	</pre>
 )
 
-const Editor = props => (
+type EditorProps = React.ComponentProps<typeof StyledLiveEditor>
+const Editor = (props: EditorProps) => (
 	<Wrapper>
 		<Tab>
 			<span />

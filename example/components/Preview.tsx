@@ -83,13 +83,13 @@ const Blueprint = () => (
 	</BlueprintWrapper>
 )
 
-const Preview = props => (
+const Preview = () => (
 	<Wrapper>
 		<Tab>
 			<span />
 		</Tab>
 		<div style={{ position: 'relative', padding: '1rem 0' }}>
-			<LivePreview {...props} />
+			<LivePreview />
 			<Blueprint />
 		</div>
 	</Wrapper>

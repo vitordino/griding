@@ -30,6 +30,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
+    "type-check": "tsc --noEmit",
     "test": "tsdx test --env=jsdom",
     "prepublishOnly": "npm run build"
   },
