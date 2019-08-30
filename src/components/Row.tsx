@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { mapTheme } from '../utils/breakpoints'
+import { mapTheme } from 'etymos'
 import Cell from './Cell'
 
 const Row = styled.div<{ ['vertical-gutter']?: boolean }>`

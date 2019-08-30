@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { mapTheme, mapBreakpoints } from '../utils/breakpoints'
+import { mapTheme, mapBreakpoints } from 'etymos'
 
 const getCellDisplay = (p: { flex?: boolean }) => (p.flex ? 'flex' : 'block')
 const Cell = styled.div<Partial<{ [key: string]: any }> & { flex?: boolean }>`
@@ -15,7 +15,7 @@ const Cell = styled.div<Partial<{ [key: string]: any }> & { flex?: boolean }>`
 	)}
 	${mapBreakpoints(
 		(value, props) => `
-		width: ${(value / props.theme.griding.columns || 1) * 100 + '%'};
+		width: ${(value / props.theme.columns || 1) * 100 + '%'};
 		display: ${value > 0 ? getCellDisplay(props) : 'none'};
 	`,
 	)}

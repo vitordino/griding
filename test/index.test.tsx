@@ -23,7 +23,7 @@ const StyledAbove = styled.div`
 `
 
 const Test = () => {
-	const theme = useTheme()
+	const { columns } = useTheme()
 	const windowSize = useWindowSize()
 	const mediaQuery = useMediaQuery({ above: 'md' })
 	const breakpoints = useBreakpoints()
@@ -31,7 +31,7 @@ const Test = () => {
 	return (
 		<Row>
 			<Cell xs={12} sm={6} md={4} lg={3} xg={2}>
-				<pre>columns: {theme.griding.columns}</pre>
+				<pre>columns: {columns}</pre>
 				<pre>window size: {JSON.stringify(windowSize)}</pre>
 				<pre>window size: {JSON.stringify(windowSize)}</pre>
 				<pre>{mediaQuery ? 'above' : 'below'}</pre>

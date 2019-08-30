@@ -1,4 +1,4 @@
-import useMediaQuery from '../hooks/useMediaQuery'
+import { useMediaQuery } from 'etymos'
 import { Constraints, renderProps } from 'types'
 
 type MediaQueryProps = Constraints & renderProps<boolean>

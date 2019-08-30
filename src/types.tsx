@@ -1,9 +1,8 @@
 type CssConstraint = number | string
 
-export type Breakpoint = { width: CssConstraint; gutter?: number }
+export type Breakpoint = { width: number; gutter?: number }
 export type Breakpoints = { [key: string]: Breakpoint }
-export type GridingOptions = { columns: number; breakpoints: Breakpoints }
-export type Theme = { griding: GridingOptions }
+export type Theme = { breakpoints: Breakpoints; columns?: number }
 
 export type Constraints = { above?: CssConstraint; below?: CssConstraint }
 

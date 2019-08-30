@@ -1,11 +1,11 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
-import { GridingOptions } from 'types'
+import { Provider as ThemeProvider } from 'etymos'
+import { Theme } from 'types'
 
-type ProviderProps = GridingOptions & { children: React.ReactChild }
+type ProviderProps = Theme & { children: React.ReactChild }
 
 const Provider = ({ children, columns, breakpoints }: ProviderProps) => (
-	<ThemeProvider theme={{ griding: { columns, breakpoints } }}>
+	<ThemeProvider columns={columns} breakpoints={breakpoints}>
 		{children}
 	</ThemeProvider>
 )
@@ -19,6 +19,6 @@ Provider.defaultProps = {
 		lg: { width: 992 },
 		xg: { width: 1280 },
 	},
-} as GridingOptions
+} as Theme
 
 export default Provider
